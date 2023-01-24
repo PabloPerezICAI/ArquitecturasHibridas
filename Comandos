@@ -24,5 +24,4 @@ curl -XPOST localhost:9216/_reindex?pretty -H 'Content-Type: application/json' -
 }
 }
 '
-pruebavs
 
