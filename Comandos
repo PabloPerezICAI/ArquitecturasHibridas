@@ -46,4 +46,4 @@ curl -XPOST localhost:9216/_reindex?pretty -H 'Content-Type: application/json' -
 sleep 300
 done
 
-nohup cargadatos.sh & > cargadatoslog.out &
+nohup ./cargadatos.sh > cargadatoslog.out 2>&1 &
