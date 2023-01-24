@@ -1,0 +1,28 @@
+/home/shared/install-local.sh #puerto 9216 de ES y 10216 de kibana
+
+nohup /home/alumnos//ah16/elasticsearch-7.16.1/bin/elasticsearch &
+
+nohup /home/alumnos//ah16/kibana-7.16.2-linux-x86_64/bin/kibana &
+
+curl -XGET localhost:9216/_cat/health
+curl localhost:9216/_cat/indices
+
+http://192.168.80.38:10216 #acceder a kibana
+
+curl -XPOST localhost:9216/_reindex?pretty -H 'Content-Type: application/json' -d'
+{
+"source": {
+"remote": {
+"host": "http://worker01:9200",
+"username": "consultas",
+"password": "icai4ever"
+},
+"index": "index-data"
+},
+"dest": {
+"index": "index-data"
+}
+}
+'
+
+
