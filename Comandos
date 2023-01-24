@@ -25,3 +25,5 @@ curl -XPOST localhost:9216/_reindex?pretty -H 'Content-Type: application/json' -
 }
 '
 
+ crontab -e 05 * * * * ah16 /home/alumnos/ah16/cargadatos.sh
+ crontab -e 05 * * * * /home/alumnos/ah16/cargadatos.sh
