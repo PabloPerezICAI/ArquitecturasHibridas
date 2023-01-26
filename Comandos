@@ -4,8 +4,12 @@ nohup /home/alumnos//ah16/elasticsearch-7.16.1/bin/elasticsearch &
 
 nohup /home/alumnos//ah16/kibana-7.16.2-linux-x86_64/bin/kibana &
 
-curl -XGET localhost:9216/_cat/health
-curl localhost:9216/_cat/indices
+/home/alumnos//ah16/elasticsearch-7.16.1/bin/elasticsearch-setup-passwords interactive
+/home/alumnos//ah16/kibana-7.16.2-linux-x86_64/bin/kibana-keystore create
+/home/alumnos//ah16/kibana-7.16.2-linux-x86_64/bin/kibana-keystore add elasticsearch.password
+
+curl --user elastic:jopa2023 -XGET localhost:9216/_cat/health
+curl --user elastic:jopa2023 localhost:9216/_cat/indices
 
 http://192.168.80.38:10216 #acceder a kibana
 
@@ -24,6 +28,22 @@ curl -XPOST localhost:9216/_reindex?pretty -H 'Content-Type: application/json' -
 }
 }
 '
+curl --user elastic:jopa2023 -XPOST localhost:9216/_reindex?pretty -H 'Content-Type: application/json' -d'
+{
+"source": {
+"remote": {
+"host": "http://worker01:9200",
+"username": "consultas",
+"password": "icai4ever"
+},
+"index": "index-data"
+},
+"dest": {
+"index": "index-data"
+}
+}
+'
+
 
 #!/bin/bash
 while true
@@ -47,3 +67,4 @@ sleep 300
 done
 
 nohup ./cargadatos.sh > cargadatoslog.out 2>&1 &
+
