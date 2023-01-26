@@ -8,6 +8,10 @@ nohup /home/alumnos//ah16/kibana-7.16.2-linux-x86_64/bin/kibana &
 /home/alumnos//ah16/kibana-7.16.2-linux-x86_64/bin/kibana-keystore create
 /home/alumnos//ah16/kibana-7.16.2-linux-x86_64/bin/kibana-keystore add elasticsearch.password
 
+/home/alumnos//ah16/elasticsearch-7.16.1/bin/elasticsearch-certutil ca
+/home/alumnos//ah16/elasticsearch-7.16.1/bin/elasticsearch-certutil cert --ca elastic-stack-ca.p12
+
+
 curl --user elastic:jopa2023 -XGET localhost:9216/_cat/health
 curl --user elastic:jopa2023 localhost:9216/_cat/indices
 
