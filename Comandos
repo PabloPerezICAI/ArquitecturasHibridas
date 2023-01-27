@@ -15,8 +15,7 @@ nohup /home/alumnos//ah16/kibana-7.16.2-linux-x86_64/bin/kibana &
 /home/alumnos/ah16/elasticsearch-7.16.1/elastic-stack-ca.p12
 node-ah16
 
-/home/alumnos//ah16/elasticsearch-7.16.1/
-/home/alumnos//ah16/elasticsearch-7.16.1/
+/home/alumnos//ah16/elasticsearch-7.16.1/bin/elasticsearch-keystore add xpack.security.http.ssl.keystore.secure_password
 
 curl --user elastic:jopa2023 -XGET localhost:9216/_cat/health
 curl --user elastic:jopa2023 localhost:9216/_cat/indices
