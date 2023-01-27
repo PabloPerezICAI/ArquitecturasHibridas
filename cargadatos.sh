@@ -1,7 +1,7 @@
 #!/bin/bash
 while true
 do
-curl --user elastic:jopa2023 -XPOST localhost:9216/_reindex?pretty -H 'Content-Type: application/json' -d'
+curl --user elastic:jopa2023 -XPOST -k https://localhost:9216/_reindex?pretty -H 'Content-Type: application/json' -d'
 {
 "source": {
 "remote": {
