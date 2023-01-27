@@ -41,7 +41,7 @@ curl -XPOST localhost:9216/_reindex?pretty -H 'Content-Type: application/json' -
 }
 }
 '
-curl --user elastic:jopa2023 -XPOST localhost:9216/_reindex?pretty -H 'Content-Type: application/json' -d'
+curl --user elastic:jopa2023 -XPOST -k https://localhost:9216/_reindex?pretty -H 'Content-Type: application/json' -d'
 {
 "source": {
 "remote": {
@@ -51,6 +51,20 @@ curl --user elastic:jopa2023 -XPOST localhost:9216/_reindex?pretty -H 'Content-T
 },
 "index": "index-data"
 },
+"dest": {
+"index": "index-data"
+}
+}
+'
+
+curl -u usuario:contraseña-XPOST -k https://localhost:92XXX/_reindex?pretty -H 'Content-Type: application/json' -d'
+{
+"source": {
+"remote": {
+"host": "http://worker01:9200",
+"username": "consultas",
+"password": "icai4ever"}, 
+"index": "index-data"},
 "dest": {
 "index": "index-data"
 }
