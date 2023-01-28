@@ -9,7 +9,15 @@ curl --user elastic:jopa2023 -XPOST -k https://localhost:9216/_reindex?pretty -H
 "username": "consultas",
 "password": "icai4ever"
 },
-"index": "index-data"
+"index": "index-data",
+"query": {
+"range": {
+"@timestamp": {
+"gte" : "now-12d/d",
+"time_zone" : "+01:00"
+}
+}
+}
 },
 "dest": {
 "index": "index-data"
