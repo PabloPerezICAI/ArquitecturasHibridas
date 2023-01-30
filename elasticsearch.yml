@@ -112,3 +112,5 @@ xpack.security.transport.ssl.truststore.path: elastic-certificates.p12
 xpack.security.http.ssl.enabled: true
 xpack.security.http.ssl.keystore.path: http.p12
 xpack.security.audit.enabled: true
+xpack.security.audit.logfile.events.include: [_all]
+xpack.security.audit.logfile.events.emit_request_body: true
