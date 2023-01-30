@@ -1,8 +1,8 @@
 /home/shared/install-local.sh #puerto 9216 de ES y 10216 de kibana
 
-nohup /home/alumnos//ah16/elasticsearch-7.16.1/bin/elasticsearch &
+nohup /home/alumnos//ah16/elasticsearch-7.16.1/bin/elasticsearch > eslasticsearchlog.out 2>&1 &
 
-nohup /home/alumnos//ah16/kibana-7.16.2-linux-x86_64/bin/kibana &
+nohup /home/alumnos//ah16/kibana-7.16.2-linux-x86_64/bin/kibana > kibanalog.out 2>&1 &
 
 /home/alumnos//ah16/elasticsearch-7.16.1/bin/elasticsearch-setup-passwords interactive
 /home/alumnos//ah16/kibana-7.16.2-linux-x86_64/bin/kibana-keystore create
