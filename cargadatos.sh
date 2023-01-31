@@ -13,7 +13,7 @@ curl --user elastic:jopa2023 -XPOST -k https://localhost:9216/_reindex?pretty -H
 "query": {
 "range": {
 "@timestamp": {
-"gte" : "now-12d/d",
+"gte" : "now-15d/d",
 "time_zone" : "+01:00"
 }
 }
@@ -24,5 +24,18 @@ curl --user elastic:jopa2023 -XPOST -k https://localhost:9216/_reindex?pretty -H
 }
 }
 '
-sleep 300
+sleep 30
+curl --user elastic:jopa2023 -XPOST -k https://localhost:9216/index-data/_delete_by_query?pretty -H 'Content-Type: application/json' -d'
+{
+"query": {
+"range": {
+"@timestamp": {
+"lte" : "now-15d/d",
+"time_zone" : "+01:00"
+}
+}
+}
+}
+'
+sleep 270
 done
