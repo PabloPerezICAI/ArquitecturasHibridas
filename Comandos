@@ -88,6 +88,17 @@ curl --user elastic:jopa2023 -XPUT -k https://localhost:9216/_snapshot/my_hdfs_r
   }
 }
 '
+
+curl -k -u elastic:jopa2023 -X PUT -k https://localhost:9216/_snapshot/BackupRepo?pretty -H 'Content-Type:application/json' -d'
+{
+"type": "fs",
+"settings": {
+"location": "/home/alumnos/ah16/BackupRepo",
+"compress": true
+}
+}
+'
+
 nohup ./cargadatos.sh > cargadatoslog.out 2>&1 &
 
 
