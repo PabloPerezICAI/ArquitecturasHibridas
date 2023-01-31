@@ -101,5 +101,5 @@ curl -k -u elastic:jopa2023 -X PUT -k https://localhost:9216/_snapshot/my_repo?p
 
 nohup ./cargadatos.sh > cargadatoslog.out 2>&1 &
 
-
+nohup ./backup.sh > backuplog.out 2>&1 &
 
