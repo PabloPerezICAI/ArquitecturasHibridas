@@ -78,15 +78,17 @@ curl --user elastic:jopa2023 -XPOST -k https://localhost:9216/index-data/_delete
 }
 }
 '
-nohup ./cargadatos.sh > cargadatoslog.out 2>&1 &
-
-curl -XPUT _snapshot/my_hdfs_repository
+curl --user elastic:jopa2023 -XPUT -k https://localhost:9216/_snapshot/my_hdfs_repository -H 'Content-Type: application/json' -d'
 {
-  "type": "hdfs",
-  "settings": {
-    "uri": "hdfs://namenode:8020/",
-    "path": "elasticsearch/repositories/my_hdfs_repository",
-    "conf.dfs.client.read.shortcircuit": "true"
+"type": "hdfs",
+"settings": {
+"uri": "hdfs://nameservice1:8020/",
+"path": "user/mbd31/my_hdfs_repository",
+"conf.dfs.client.read.shortcircuit": "true"
   }
 }
+'
+nohup ./cargadatos.sh > cargadatoslog.out 2>&1 &
+
+
 
