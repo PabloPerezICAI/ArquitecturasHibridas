@@ -100,7 +100,7 @@ curl -k -u elastic:jopa2023 -X PUT -k https://localhost:9216/_snapshot/my_repo?p
 '
 
 yesterday=$(date --date="yesterday" +%Y.%m.%d)
-curl -k -u elastic:jopa2023 -X PUT https://localhost:9216/snapshot/my_repo/backup${yesterday}?wait_for_completion=true
+curl -k -u elastic:jopa2023 -X PUT https://localhost:9216/_snapshot/my_repo/backup${yesterday}?wait_for_completion=true
 
 nohup ./cargadatos.sh > cargadatoslog.out 2>&1 &
 
