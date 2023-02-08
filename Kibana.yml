@@ -208,3 +208,5 @@ server.host: "edge02.bigdata.alumnos.upcont.es"
 elasticsearch.username: "kibana_system"
 elasticsearch.ssl.certificateAuthorities: /home/alumnos/ah16/kibana-7.16.2-linux-x86_64/config/elasticsearch-ca.pem
 xpack.encryptedSavedObjects.encryptionKey: "something_at_least_32_characters"
+server.ssl.certificate:	/home/alumnos/ah16/kibana-7.16.2-linux-x86_64/config/Kibana-server.key
+server.ssl.enabled: true
