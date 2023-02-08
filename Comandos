@@ -78,16 +78,6 @@ curl --user elastic:jopa2023 -XPOST -k https://localhost:9216/index-data/_delete
 }
 }
 '
-curl --user elastic:jopa2023 -XPUT -k https://localhost:9216/_snapshot/my_hdfs_repository -H 'Content-Type: application/json' -d'
-{
-"type": "hdfs",
-"settings": {
-"uri": "hdfs://nameservice1:8020/",
-"path": "user/mbd31/my_hdfs_repository",
-"conf.dfs.client.read.shortcircuit": "true"
-  }
-}
-'
 
 curl -k -u elastic:jopa2023 -X PUT -k https://localhost:9216/_snapshot/my_repo?pretty -H 'Content-Type:application/json' -d'
 {
