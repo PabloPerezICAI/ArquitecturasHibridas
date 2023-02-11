@@ -21,7 +21,7 @@ node-ah16
 /home/alumnos//ah16/elasticsearch-7.16.1/
 /home/alumnos//ah16/elasticsearch-7.16.1/
 
-curl --user elastic:jopa2023 -XGET localhost:9216/_cat/health
+curl --user elastic:jopa2023 -XGET -k https://localhost:9216/_cat/health
 curl --user elastic:jopa2023 localhost:9216/_cat/indices
 
 http://192.168.80.38:10216 #acceder a kibana
