@@ -5,7 +5,7 @@ curl --user elastic:jopa2023 -XPOST -k https://localhost:9216/_reindex?pretty -H
 {
 "source": {
 "remote": {
-"host": "http://worker01:9200",
+"host": "https://worker01:9200",
 "username": "consultas",
 "password": "icai4ever"
 },
