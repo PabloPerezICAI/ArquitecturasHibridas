@@ -115,3 +115,4 @@ xpack.security.audit.enabled: true
 xpack.security.audit.logfile.events.include: [_all]
 xpack.security.audit.logfile.events.emit_request_body: true
 path.repo: ["/home/alumnos/ah16/my_repo"]
+reindex.ssl.verification_mode: none
