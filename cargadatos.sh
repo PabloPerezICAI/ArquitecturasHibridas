@@ -25,7 +25,7 @@ curl --user elastic:jopa2023 -XPOST -k https://localhost:9216/_reindex?pretty -H
 }
 '
 sleep 30
-curl --user elastic:jopa2023 -XPOST -k https://localhost:9216/index-data/_delete_by_query?pretty -H 'Content-Type: application/json' -d'
+curl --user elastic:**** -XPOST -k https://localhost:9216/index-data/_delete_by_query?pretty -H 'Content-Type: application/json' -d'
 {
 "query": {
 "range": {
