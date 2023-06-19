@@ -21,8 +21,8 @@ node-ah16
 /home/alumnos//ah16/elasticsearch-7.16.1/
 /home/alumnos//ah16/elasticsearch-7.16.1/
 
-curl --user elastic:jopa2023 -XGET -k https://localhost:9216/_cat/health
-curl --user elastic:jopa2023 localhost:9216/_cat/indices
+curl --user elastic:**** -XGET -k https://localhost:9216/_cat/health
+curl --user elastic:**** localhost:9216/_cat/indices
 
 http://192.168.80.38:10216 #acceder a kibana
 
@@ -42,7 +42,7 @@ curl -XPOST localhost:9216/_reindex?pretty -H 'Content-Type: application/json' -
 }
 '
 
-curl --user elastic:jopa2023 -XPOST -k https://localhost:9216/_reindex?pretty -H 'Content-Type: application/json' -d'
+curl --user elastic:**** -XPOST -k https://localhost:9216/_reindex?pretty -H 'Content-Type: application/json' -d'
 {
 "source": {
 "remote": {
@@ -66,7 +66,7 @@ curl --user elastic:jopa2023 -XPOST -k https://localhost:9216/_reindex?pretty -H
 }
 '
 
-curl --user elastic:jopa2023 -XPOST -k https://localhost:9216/index-data/_delete_by_query?pretty -H 'Content-Type: application/json' -d'
+curl --user elastic:**** -XPOST -k https://localhost:9216/index-data/_delete_by_query?pretty -H 'Content-Type: application/json' -d'
 {
 "query": {
 "range": {
@@ -79,7 +79,7 @@ curl --user elastic:jopa2023 -XPOST -k https://localhost:9216/index-data/_delete
 }
 '
 
-curl -k -u elastic:jopa2023 -X PUT -k https://localhost:9216/_snapshot/my_repo?pretty -H 'Content-Type:application/json' -d'
+curl -k -u elastic:**** -X PUT -k https://localhost:9216/_snapshot/my_repo?pretty -H 'Content-Type:application/json' -d'
 {
 "type": "fs",
 "settings": {
@@ -90,7 +90,7 @@ curl -k -u elastic:jopa2023 -X PUT -k https://localhost:9216/_snapshot/my_repo?p
 '
 
 yesterday=$(date --date="yesterday" +%Y.%m.%d)
-curl -k -u elastic:jopa2023 -X PUT https://localhost:9216/_snapshot/my_repo/backup${yesterday}?wait_for_completion=true
+curl -k -u elastic:**** -X PUT https://localhost:9216/_snapshot/my_repo/backup${yesterday}?wait_for_completion=true
 
 nohup ./cargadatos.sh > cargadatoslog.out 2>&1 &
 
